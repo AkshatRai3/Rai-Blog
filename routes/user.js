@@ -17,7 +17,7 @@ router.post('/signup', async(req, res) => {
         name,
         email,
         password
-    })
-    res.redirect('/')
+    });
+    res.redirect('/');
 })
 module.exports = router;
