@@ -3,7 +3,7 @@ const {createHmac, randomBytes} = require('crypto');
 const { type } = require('os');
 
 const userSchema = new Schema({
-    name:{
+    fullname:{
         type:String,
         required:true
     },
@@ -47,4 +47,4 @@ userSchema.pre('save', function(next){
 })
 
 const User = model("user", userSchema);
-module.exports = User;
+module.exports = {User}

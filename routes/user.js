@@ -1,5 +1,5 @@
 const express = require('express');
-const { User } = require('../model/user');
+const { User } = require('../model/user.js');
 
 const router = express.Router();
 
@@ -12,9 +12,9 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', async(req, res) => {
-    const {name, email, password} = req.body;
+    const {fullname, email, password} = req.body;
     await User.create({
-        name,
+        fullname,
         email,
         password
     });
