@@ -5,11 +5,11 @@
     <title>Signin</title>
 </head>
 <body> 
-      <% if (locals.error) { %>
- <div class="alert alert-danger mt-5" role="alert">
-  <%= locals.error %>
-</div>
-<% } %>
+    <% if (locals.error) { %>
+        <div class="alert alert-danger mt-5" role="alert">
+        <%= locals.error %>
+        </div>
+    <% } %>
     <div class="container">
         <form method="post" action="/user/signin">
             <div class="mb-3">
