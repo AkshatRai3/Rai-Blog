@@ -11,6 +11,29 @@
         <img src="<%= blog.coverImageURL.startsWith("/")?blog.coverImageURL:"/"+blog.coverImageURL %>" alt="..." height="500vh" />
         <pre><%= blog.body %></pre>
     </div>
+    <div class="container mt-3">
+        <h1>Comments(<%= comments.length %>)</h1>
+        <form method="post" action="/blog/comment/<%= blog._id %>">
+            <div class="mb-3">
+                <input 
+                type="text" 
+                class="form-control" 
+                id="content"
+                placeholder="Enter your comment"
+                name="content">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <% comments.forEach(comment => { %>
+                 <img src="<%= comment.createdBy.profileimageURL %>" width="30px" height="30px" style="border-radius: 50%;" alt=""><%= comment.createdBy.fullName %>
+                 <pre><%= comment.content %></pre>
+                 <br>
+
+        <% }) %>
+    </div>
+
     <%-  include('./partials/scripts') %>
 </body>
 </html>
